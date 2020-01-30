@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Display Records</title>
+<title>Display subtraction value Records</title>
 </head>
 
 <body>
 <table width="600" border="1" cellspacing="5" cellpadding="5">
   <tr style="background:#CCC">
     <th>number</th>
-    <th>digit_one</th>
-    <th>digit_two</th>
+    <th>subtraction_one</th>
+    <th>subtraction_two</th>
     <th>results</th>
 
 
@@ -20,9 +20,8 @@
   {
   echo "<tr>";
   echo "<td>".$i."</td>";
-  echo "<td>".$row->digit_one."</td>";
-  echo "<td>".$row->digit_two."</td>";
-  echo "<td>".$row->multiplication_results."</td>";
+  echo "<td>".$row->subtraction_one."</td>";
+  echo "<td>".$row->subtraction_two."</td>";
 
   echo "</tr>";
   $i++;

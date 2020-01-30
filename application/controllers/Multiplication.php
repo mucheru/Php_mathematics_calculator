@@ -17,6 +17,7 @@
 		if($this->form_validation->run()==FALSE){
 
 		$this->load->view('multiplication');
+		
 
 		}
 		else{

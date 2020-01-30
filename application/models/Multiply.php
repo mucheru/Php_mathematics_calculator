@@ -12,10 +12,10 @@ $this->db->insert('entries',$data);
 }
 
 function retrieve_multiplication_values(){
-$this->db->select("digit_one,digit_two");
+$this->db->select("digit_one,digit_two,multiplication_results");
 $this->db->from('entries');
 $this->db->where('status=1');
-$this->db->limit('100');
+$this->db->limit('200');
 
 $query=$this->db->get();
 return $query->result();

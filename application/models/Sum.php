@@ -11,7 +11,8 @@ class Sum extends CI_Model {
 		$data=array(
          'num_1'=>$this->input->post('num_1'),
          'num_2'=>$this->input->post('num_2'),
-         'results'=>$results
+         'results'=>$results,
+         'status'=>3
 
 		);
 
@@ -19,6 +20,14 @@ class Sum extends CI_Model {
 
 	}
 	
+function retrieve_sum_values(){
 
+	$this->db->select("num_1,num_2,results");
+	$this->db->from("entries");
+	$this->db->where('status=3');
+	$query=$this->db->get();
+	return $query->result();
+
+}
 
 }

@@ -27,6 +27,10 @@ class Subtraction extends CI_Controller{
 
 }
 
-
+public function retrieve_subtraction_value(){
+$this->load->model('sub');
+$display['data']=$this->sub->retrieve_sub_values();
+$this->load->view('display_sub',$display);
+}
 }
 ?>
