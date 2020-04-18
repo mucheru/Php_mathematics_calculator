@@ -1,7 +1,9 @@
 <?php 
 	defined('BASEPATH') OR exit('No direct script access allowed');
-	class Multiplication extends CI_Controller{
-		function __construct(){
+	class Multiplication extends CI_Controller
+	{
+		function __construct()
+		{
 				 	parent::__construct();
 				 	$this->load->helper('url_helper');
 	   }
@@ -20,7 +22,8 @@
 		
 
 		}
-		else{
+		else
+		{
 
 		   	$data=array(
 			'digit_one'=>$this->input->post('digit_one'),
