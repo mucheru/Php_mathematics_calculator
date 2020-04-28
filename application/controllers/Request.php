@@ -13,11 +13,9 @@ public function index(){
       $this->load->model('Api_data');
 		}
 
-
-
 public function data(){
   $curl = curl_init();
-curl_setopt_array($curl, array(
+  curl_setopt_array($curl, array(
   CURLOPT_URL => "https://uat-dmvic.azure-api.net/api/V1/Account/Login",
   CURLOPT_RETURNTRANSFER => true,
   CURLOPT_ENCODING => "",
@@ -42,16 +40,14 @@ if ($err) {
   echo "cURL Error #:" . $err;
 } else {
  echo $response;
- $decorded_data=json_decode($response);
- $response_data=array($decorded_data);
- $response_data['token']=$this->input->get('token');
-  $response_data['issueAt']=$this->input->get('issueAt');
-  $response_data['expires']=$this->input->get('expires');
- $response_data['firstName']=$this->input->get('firstName');
-  $response_data['loginUserId']=$this->input->get('loginUserId');
- $this->Api_data->inset_api_data($decorded_data);
-
- //$this->Api_data->inset_api_data();
+$decorded_data=json_decode($response);
+$response_data=array($decorded_data);
+$response_data['token']=$this->input->get('token');
+$response_data['issueAt']=$this->input->get('issueAt');
+$response_data['expires']=$this->input->get('expires');
+$response_data['firstName']=$this->input->get('firstName');
+$response_data['loginUserId']=$this->input->get('loginUserId');
+$this->Api_data->inset_api_data($decorded_data); 
 
 }
 
